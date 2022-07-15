@@ -1,4 +1,4 @@
-package com.FixMyCar.model.entities;
+package com.FixMyCar.models.entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

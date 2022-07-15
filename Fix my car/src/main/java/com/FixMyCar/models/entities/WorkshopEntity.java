@@ -1,6 +1,6 @@
-package com.FixMyCar.model.entities;
+package com.FixMyCar.models.entities;
 
-import com.FixMyCar.model.enums.RepairType;
+import com.FixMyCar.models.enums.RepairType;
 
 import javax.persistence.*;
 import java.util.ArrayList;

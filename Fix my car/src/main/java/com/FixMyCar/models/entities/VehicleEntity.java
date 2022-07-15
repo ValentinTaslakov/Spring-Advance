@@ -1,8 +1,8 @@
-package com.FixMyCar.model.entities;
+package com.FixMyCar.models.entities;
 
-import com.FixMyCar.model.enums.FuelTypeEnum;
-import com.FixMyCar.model.enums.TransmissionEnum;
-import com.FixMyCar.model.enums.VehicleTypeEnum;
+import com.FixMyCar.models.enums.FuelTypeEnum;
+import com.FixMyCar.models.enums.TransmissionEnum;
+import com.FixMyCar.models.enums.VehicleTypeEnum;
 
 import javax.persistence.*;
 import java.util.List;

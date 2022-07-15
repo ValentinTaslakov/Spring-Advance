@@ -1,6 +1,6 @@
 package com.FixMyCar.repositories;
 
-import com.FixMyCar.model.entities.SparePartEntity;
+import com.FixMyCar.models.entities.SparePartEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

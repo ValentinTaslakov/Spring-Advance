@@ -1,4 +1,4 @@
-package com.FixMyCar.model.enums;
+package com.FixMyCar.models.enums;
 
 public enum RepairType {
     CAR_BODY,
