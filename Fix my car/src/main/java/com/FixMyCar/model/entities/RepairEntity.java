@@ -9,20 +9,20 @@ import java.util.List;
 
 @Entity
 @Table(name = "repairs")
-public class Repair {
+public class RepairEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    private Vehicle vehicle;
+    private VehicleEntity vehicleEntity;
 
     @Enumerated(EnumType.STRING)
     private RepairType type;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<SparePart> partsForReplacement;
+    private List<SparePartEntity> partsForReplacement;
 
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String repairDescription;
@@ -36,23 +36,23 @@ public class Repair {
     @Column(nullable = false)
     private BigDecimal price;
 
-    public Repair() {}
+    public RepairEntity() {}
 
     public Long getId() {
         return id;
     }
 
-    public Repair setId(Long id) {
+    public RepairEntity setId(Long id) {
         this.id = id;
         return this;
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
+    public VehicleEntity getVehicle() {
+        return vehicleEntity;
     }
 
-    public Repair setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
+    public RepairEntity setVehicle(VehicleEntity vehicleEntity) {
+        this.vehicleEntity = vehicleEntity;
         return this;
     }
 
@@ -60,16 +60,16 @@ public class Repair {
         return type;
     }
 
-    public Repair setType(RepairType type) {
+    public RepairEntity setType(RepairType type) {
         this.type = type;
         return this;
     }
 
-    public List<SparePart> getPartsForReplacement() {
+    public List<SparePartEntity> getPartsForReplacement() {
         return partsForReplacement;
     }
 
-    public Repair setPartsForReplacement(List<SparePart> partsForReplacement) {
+    public RepairEntity setPartsForReplacement(List<SparePartEntity> partsForReplacement) {
         this.partsForReplacement = partsForReplacement;
         return this;
     }
@@ -78,7 +78,7 @@ public class Repair {
         return repairDescription;
     }
 
-    public Repair setRepairDescription(String repairDescription) {
+    public RepairEntity setRepairDescription(String repairDescription) {
         this.repairDescription = repairDescription;
         return this;
     }
@@ -87,7 +87,7 @@ public class Repair {
         return actualMileage;
     }
 
-    public Repair setActualMileage(int actualMileage) {
+    public RepairEntity setActualMileage(int actualMileage) {
         this.actualMileage = actualMileage;
         return this;
     }
@@ -96,7 +96,7 @@ public class Repair {
         return repairStart;
     }
 
-    public Repair setRepairStart(LocalDate repairStart) {
+    public RepairEntity setRepairStart(LocalDate repairStart) {
         this.repairStart = repairStart;
         return this;
     }
@@ -105,7 +105,7 @@ public class Repair {
         return price;
     }
 
-    public Repair setPrice(BigDecimal price) {
+    public RepairEntity setPrice(BigDecimal price) {
         this.price = price;
         return this;
     }

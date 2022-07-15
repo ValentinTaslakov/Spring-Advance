@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "orders")
-public class Order {
+@Table(name = "orderEntities")
+public class OrderEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class Order {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "repair_id",referencedColumnName = "id")
-    private Repair repair;
+    private RepairEntity repairEntity;
 
     private BigDecimal partsPrice;
 
@@ -21,23 +21,23 @@ public class Order {
 
     private BigDecimal totalPrice;
 
-    public Order() {}
+    public OrderEntity() {}
 
     public Long getId() {
         return id;
     }
 
-    public Order setId(Long id) {
+    public OrderEntity setId(Long id) {
         this.id = id;
         return this;
     }
 
-    public Repair getRepair() {
-        return repair;
+    public RepairEntity getRepair() {
+        return repairEntity;
     }
 
-    public Order setRepair(Repair repair) {
-        this.repair = repair;
+    public OrderEntity setRepair(RepairEntity repairEntity) {
+        this.repairEntity = repairEntity;
         return this;
     }
 
@@ -45,7 +45,7 @@ public class Order {
         return partsPrice;
     }
 
-    public Order setPartsPrice(BigDecimal partsPrice) {
+    public OrderEntity setPartsPrice(BigDecimal partsPrice) {
         this.partsPrice = partsPrice;
         return this;
     }
@@ -54,7 +54,7 @@ public class Order {
         return workPrice;
     }
 
-    public Order setWorkPrice(BigDecimal workPrice) {
+    public OrderEntity setWorkPrice(BigDecimal workPrice) {
         this.workPrice = workPrice;
         return this;
     }
@@ -63,7 +63,7 @@ public class Order {
         return totalPrice;
     }
 
-    public Order setTotalPrice(BigDecimal totalPrice) {
+    public OrderEntity setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
         return this;
     }

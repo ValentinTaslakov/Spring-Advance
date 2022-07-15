@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "workshops")
-public class VehicleWorkshopEntity {
+public class WorkshopEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,15 +27,15 @@ public class VehicleWorkshopEntity {
     private List<RepairType> repairTypeList = new ArrayList<>();
 
     @OneToMany(mappedBy = "id",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Order> orders;
+    private List<OrderEntity> orderEntities;
 
-    public VehicleWorkshopEntity() {}
+    public WorkshopEntity() {}
 
     public Long getId() {
         return id;
     }
 
-    public VehicleWorkshopEntity setId(Long id) {
+    public WorkshopEntity setId(Long id) {
         this.id = id;
         return this;
     }
@@ -44,7 +44,7 @@ public class VehicleWorkshopEntity {
         return email;
     }
 
-    public VehicleWorkshopEntity setEmail(String email) {
+    public WorkshopEntity setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -53,7 +53,7 @@ public class VehicleWorkshopEntity {
         return name;
     }
 
-    public VehicleWorkshopEntity setName(String name) {
+    public WorkshopEntity setName(String name) {
         this.name = name;
         return this;
     }
@@ -62,7 +62,7 @@ public class VehicleWorkshopEntity {
         return address;
     }
 
-    public VehicleWorkshopEntity setAddress(String address) {
+    public WorkshopEntity setAddress(String address) {
         this.address = address;
         return this;
     }
@@ -71,17 +71,17 @@ public class VehicleWorkshopEntity {
         return repairTypeList;
     }
 
-    public VehicleWorkshopEntity setRepairTypeList(List<RepairType> repairTypeList) {
+    public WorkshopEntity setRepairTypeList(List<RepairType> repairTypeList) {
         this.repairTypeList = repairTypeList;
         return this;
     }
 
-    public List<Order> getOrders() {
-        return orders;
+    public List<OrderEntity> getOrders() {
+        return orderEntities;
     }
 
-    public VehicleWorkshopEntity setOrders(List<Order> orders) {
-        this.orders = orders;
+    public WorkshopEntity setOrders(List<OrderEntity> orderEntities) {
+        this.orderEntities = orderEntities;
         return this;
     }
 }

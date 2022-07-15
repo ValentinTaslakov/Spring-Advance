@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "parts")
-public class SparePart {
+public class SparePartEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,13 +17,13 @@ public class SparePart {
     @Column(nullable = false)
     private BigDecimal price;
 
-    public SparePart() {}
+    public SparePartEntity() {}
 
     public long getId() {
         return id;
     }
 
-    public SparePart setId(long id) {
+    public SparePartEntity setId(long id) {
         this.id = id;
         return this;
     }
@@ -32,7 +32,7 @@ public class SparePart {
         return name;
     }
 
-    public SparePart setName(String name) {
+    public SparePartEntity setName(String name) {
         this.name = name;
         return this;
     }
@@ -41,7 +41,7 @@ public class SparePart {
         return price;
     }
 
-    public SparePart setPrice(BigDecimal price) {
+    public SparePartEntity setPrice(BigDecimal price) {
         this.price = price;
         return this;
     }

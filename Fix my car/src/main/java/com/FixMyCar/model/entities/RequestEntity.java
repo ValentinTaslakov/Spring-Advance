@@ -6,14 +6,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "requests")
-public class RepairRequest {
+public class RequestEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    private VehicleOwnerEntity owner;
+    private OwnerEntity owner;
 
     @Column(name = "problem_location", nullable = false)
     private RepairType problemLocation;
@@ -21,22 +21,22 @@ public class RepairRequest {
     @Column(name = "problem_description",nullable = false,columnDefinition = "TEXT")
     private String problemDescription;
 
-    public RepairRequest() {}
+    public RequestEntity() {}
 
     public long getId() {
         return id;
     }
 
-    public RepairRequest setId(long id) {
+    public RequestEntity setId(long id) {
         this.id = id;
         return this;
     }
 
-    public VehicleOwnerEntity getOwner() {
+    public OwnerEntity getOwner() {
         return owner;
     }
 
-    public RepairRequest setOwner(VehicleOwnerEntity owner) {
+    public RequestEntity setOwner(OwnerEntity owner) {
         this.owner = owner;
         return this;
     }
@@ -45,7 +45,7 @@ public class RepairRequest {
         return problemLocation;
     }
 
-    public RepairRequest setProblemLocation(RepairType problemLocation) {
+    public RequestEntity setProblemLocation(RepairType problemLocation) {
         this.problemLocation = problemLocation;
         return this;
     }
@@ -54,7 +54,7 @@ public class RepairRequest {
         return problemDescription;
     }
 
-    public RepairRequest setProblemDescription(String problemDescription) {
+    public RequestEntity setProblemDescription(String problemDescription) {
         this.problemDescription = problemDescription;
         return this;
     }

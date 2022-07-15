@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "car_owners")
-public class VehicleOwnerEntity {
+public class OwnerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,15 +25,15 @@ public class VehicleOwnerEntity {
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL
     )
-    private List<Vehicle> cars;
+    private List<VehicleEntity> cars;
 
-    public VehicleOwnerEntity() {}
+    public OwnerEntity() {}
 
     public Long getId() {
         return id;
     }
 
-    public VehicleOwnerEntity setId(Long id) {
+    public OwnerEntity setId(Long id) {
         this.id = id;
         return this;
     }
@@ -42,7 +42,7 @@ public class VehicleOwnerEntity {
         return email;
     }
 
-    public VehicleOwnerEntity setEmail(String email) {
+    public OwnerEntity setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -51,7 +51,7 @@ public class VehicleOwnerEntity {
         return firstName;
     }
 
-    public VehicleOwnerEntity setFirstName(String firstName) {
+    public OwnerEntity setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
@@ -60,16 +60,16 @@ public class VehicleOwnerEntity {
         return lastName;
     }
 
-    public VehicleOwnerEntity setLastName(String lastName) {
+    public OwnerEntity setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
 
-    public List<Vehicle> getCars() {
+    public List<VehicleEntity> getCars() {
         return cars;
     }
 
-    public VehicleOwnerEntity setCars(List<Vehicle> cars) {
+    public OwnerEntity setCars(List<VehicleEntity> cars) {
         this.cars = cars;
         return this;
     }

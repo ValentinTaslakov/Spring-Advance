@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "vehicles")
-public class Vehicle {
+public class VehicleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,18 +45,18 @@ public class Vehicle {
     private int mileage;
 
     @ManyToOne
-    private VehicleOwnerEntity owner;
+    private OwnerEntity owner;
 
-    @OneToMany(mappedBy = "vehicle",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Repair> repairs;
+    @OneToMany(mappedBy = "vehicleEntity",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<RepairEntity> repairEntities;
 
-    public Vehicle() {}
+    public VehicleEntity() {}
 
     public Long getId() {
         return id;
     }
 
-    public Vehicle setId(Long id) {
+    public VehicleEntity setId(Long id) {
         this.id = id;
         return this;
     }
@@ -65,7 +65,7 @@ public class Vehicle {
         return type;
     }
 
-    public Vehicle setType(VehicleTypeEnum type) {
+    public VehicleEntity setType(VehicleTypeEnum type) {
         this.type = type;
         return this;
     }
@@ -74,7 +74,7 @@ public class Vehicle {
         return brand;
     }
 
-    public Vehicle setBrand(String brand) {
+    public VehicleEntity setBrand(String brand) {
         this.brand = brand;
         return this;
     }
@@ -83,7 +83,7 @@ public class Vehicle {
         return model;
     }
 
-    public Vehicle setModel(String model) {
+    public VehicleEntity setModel(String model) {
         this.model = model;
         return this;
     }
@@ -92,7 +92,7 @@ public class Vehicle {
         return yearOfManufacture;
     }
 
-    public Vehicle setYearOfManufacture(int yearOfManufacture) {
+    public VehicleEntity setYearOfManufacture(int yearOfManufacture) {
         this.yearOfManufacture = yearOfManufacture;
         return this;
     }
@@ -101,7 +101,7 @@ public class Vehicle {
         return fuel;
     }
 
-    public Vehicle setFuel(FuelTypeEnum fuel) {
+    public VehicleEntity setFuel(FuelTypeEnum fuel) {
         this.fuel = fuel;
         return this;
     }
@@ -110,7 +110,7 @@ public class Vehicle {
         return transmission;
     }
 
-    public Vehicle setTransmission(TransmissionEnum transmission) {
+    public VehicleEntity setTransmission(TransmissionEnum transmission) {
         this.transmission = transmission;
         return this;
     }
@@ -119,7 +119,7 @@ public class Vehicle {
         return VIN;
     }
 
-    public Vehicle setVIN(String VIN) {
+    public VehicleEntity setVIN(String VIN) {
         this.VIN = VIN;
         return this;
     }
@@ -128,7 +128,7 @@ public class Vehicle {
         return engineCode;
     }
 
-    public Vehicle setEngineCode(String engineCode) {
+    public VehicleEntity setEngineCode(String engineCode) {
         this.engineCode = engineCode;
         return this;
     }
@@ -137,26 +137,26 @@ public class Vehicle {
         return mileage;
     }
 
-    public Vehicle setMileage(int mileage) {
+    public VehicleEntity setMileage(int mileage) {
         this.mileage = mileage;
         return this;
     }
 
-    public VehicleOwnerEntity getOwner() {
+    public OwnerEntity getOwner() {
         return owner;
     }
 
-    public Vehicle setOwner(VehicleOwnerEntity owner) {
+    public VehicleEntity setOwner(OwnerEntity owner) {
         this.owner = owner;
         return this;
     }
 
-    public List<Repair> getRepairs() {
-        return repairs;
+    public List<RepairEntity> getRepairs() {
+        return repairEntities;
     }
 
-    public Vehicle setRepairs(List<Repair> repairs) {
-        this.repairs = repairs;
+    public VehicleEntity setRepairs(List<RepairEntity> repairEntities) {
+        this.repairEntities = repairEntities;
         return this;
     }
 }

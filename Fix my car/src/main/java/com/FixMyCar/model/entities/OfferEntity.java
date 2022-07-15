@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "repair_offers")
-public class RepairOffer {
+public class OfferEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class RepairOffer {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "request_id", referencedColumnName = "id")
-    private RepairRequest request;
+    private RequestEntity request;
 
     @Column(name = "description",nullable = false,columnDefinition = "TEXT")
     private String description;
@@ -21,19 +21,19 @@ public class RepairOffer {
     @Column(nullable = false)
     private BigDecimal offerPrice;
 
-    public VehicleWorkshopEntity getFromWorkshop() {
+    public WorkshopEntity getFromWorkshop() {
         return fromWorkshop;
     }
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "workshop_id",referencedColumnName = "id")
-    private VehicleWorkshopEntity fromWorkshop;
+    private WorkshopEntity fromWorkshop;
 
     private boolean isAccepted;
 
-    public RepairOffer() {}
+    public OfferEntity() {}
 
-    public RepairOffer setFromWorkshop(VehicleWorkshopEntity fromWorkshop) {
+    public OfferEntity setFromWorkshop(WorkshopEntity fromWorkshop) {
         this.fromWorkshop = fromWorkshop;
         return this;
     }
@@ -42,16 +42,16 @@ public class RepairOffer {
         return id;
     }
 
-    public RepairOffer setId(long id) {
+    public OfferEntity setId(long id) {
         this.id = id;
         return this;
     }
 
-    public RepairRequest getRequest() {
+    public RequestEntity getRequest() {
         return request;
     }
 
-    public RepairOffer setRequest(RepairRequest request) {
+    public OfferEntity setRequest(RequestEntity request) {
         this.request = request;
         return this;
     }
@@ -60,7 +60,7 @@ public class RepairOffer {
         return description;
     }
 
-    public RepairOffer setDescription(String description) {
+    public OfferEntity setDescription(String description) {
         this.description = description;
         return this;
     }
@@ -69,7 +69,7 @@ public class RepairOffer {
         return offerPrice;
     }
 
-    public RepairOffer setOfferPrice(BigDecimal offerPrice) {
+    public OfferEntity setOfferPrice(BigDecimal offerPrice) {
         this.offerPrice = offerPrice;
         return this;
     }
@@ -78,7 +78,7 @@ public class RepairOffer {
         return isAccepted;
     }
 
-    public RepairOffer setAccepted(boolean accepted) {
+    public OfferEntity setAccepted(boolean accepted) {
         isAccepted = accepted;
         return this;
     }
