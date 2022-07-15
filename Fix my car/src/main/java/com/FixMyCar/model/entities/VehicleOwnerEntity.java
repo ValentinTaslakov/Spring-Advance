@@ -9,7 +9,7 @@ public class VehicleOwnerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false,unique = true)
     private String email;
@@ -26,4 +26,51 @@ public class VehicleOwnerEntity {
             cascade = CascadeType.ALL
     )
     private List<Vehicle> cars;
+
+    public VehicleOwnerEntity() {}
+
+    public Long getId() {
+        return id;
+    }
+
+    public VehicleOwnerEntity setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public VehicleOwnerEntity setEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public VehicleOwnerEntity setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public VehicleOwnerEntity setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public List<Vehicle> getCars() {
+        return cars;
+    }
+
+    public VehicleOwnerEntity setCars(List<Vehicle> cars) {
+        this.cars = cars;
+        return this;
+    }
 }
